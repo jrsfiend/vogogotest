@@ -7,73 +7,10 @@ class Machine
 		valids = 0
 		errors = 0 
 		done = false
-		def doillegals
-			for i in 0..42
-				d = []
-				d[8] = rand(9)
-				d[7] = rand(9)
-				d[6] = rand(9)
-				d[5] = rand(9)
-				d[4] = rand(9)
-				d[3] = rand(9)
-				d[2] = rand(9)
-				d[1] = rand(9)
-				d[0] = rand(9)
-				line1 = []
-				line2 = []
-				line3 = []
-					
-				d.reverse.each_with_index do |val, index| 
-					if val == 0 
-						line1[index] = "   "
-						line2[index] = " | "
-						line3[index] = "_ |"
-					elsif val == 1
-						line1[index] = "   "
-						line2[index] = "_ |"
-						line3[index] = "  |"
-					elsif val == 2
-						line1[index] = " _ "
-						line2[index] = "_| "
-						line3[index] = "|_ "
-					elsif val == 3
-						line1[index] = " _ "
-						line2[index] = " _|"
-						line3[index] = " _|"
-					elsif val == 4
-						line1[index] = "   "
-						line2[index] = "__|"
-						line3[index] = "  |"
-					elsif val == 5
-						line1[index] = " _ "
-						line2[index] = "|_ "
-						line3[index] = " __"
-					elsif val == 6
-						line1[index] = " _ "
-						line2[index] = "|_ "
-						line3[index] = "__|"
-					elsif val == 7
-						line1[index] = " _ "
-						line2[index] = "  |"
-						line3[index] = "_ _"
-					elsif val == 8
-						line1[index] = " _ "
-						line3[index] = "|_|"
-						line3[index] = "__|"
-					elsif val == 9
-						line1[index] = " _ "
-						line3[index] = "|_|"
-						line3[index] = "__|"
-					end
-				end
-				
-				write(line1, line2, line3)
-			end
-		end
+		illegals = 0
 		while !done do
-			if (valids + errors) >= 82
+			if (valids + errors + illegals) >= 125
 				done = true
-				doillegals
 			end
 
 			d = []
@@ -86,13 +23,13 @@ class Machine
 			d[2] = rand(9)
 			d[1] = rand(9)
 			d[0] = rand(9)
-			if ((1*d[0])+(2*d[1])+(3*d[2])+(4*d[3])+(5*d[4])+(6*d[5])+(7*d[6])+(8*d[7])+(9*d[8])) % 11 == 0
+			if ((1*d[8])+(2*d[7])+(3*d[6])+(4*d[5])+(5*d[4])+(6*d[3])+(7*d[2])+(8*d[1])+(9*d[0])) % 11 == 0
 				line1 = []
 				line2 = []
 				line3 = []
 				if valids <= 41
 					
-					d.reverse.each_with_index do |val, index| 
+					d.each_with_index do |val, index| 
 						if val == 0 
 							line1[index] = " _ "
 							line2[index] = "| |"
@@ -127,23 +64,28 @@ class Machine
 							line3[index] = "  |"
 						elsif val == 8
 							line1[index] = " _ "
-							line3[index] = "|_|"
+							line2[index] = "|_|"
 							line3[index] = "|_|"
 						elsif val == 9
 							line1[index] = " _ "
-							line3[index] = "|_|"
+							line2[index] = "|_|"
 							line3[index] = " _|"
 						end
 					end
-					
+					if valids > illegals
+						random = rand(9)
+						line1[random] = "|||"
+						illegals = illegals + 1
+					else
+						valids  = valids + 1
+					end
 					write(line1, line2, line3)
-					valids  = valids + 1
 				end
 			else
 				line1 = []
 				line2 = []
 				line3 = []	
-				if errors <= 41
+				if errors <= 41 and valids > errors
 					d.reverse.each_with_index do |val, index| 
 						if val == 0 
 							line1[index] = " _ "
@@ -179,11 +121,11 @@ class Machine
 							line3[index] = "  |"
 						elsif val == 8
 							line1[index] = " _ "
-							line3[index] = "|_|"
+							line2[index] = "|_|"
 							line3[index] = "|_|"
 						elsif val == 9
 							line1[index] = " _ "
-							line3[index] = "|_|"
+							line2[index] = "|_|"
 							line3[index] = " _|"
 						end
 					end

@@ -2,6 +2,9 @@ class Read
 
 	def initialize(filename)
 		z = 0
+		ills = 0
+		nice = 0
+		errs = 0
 		account = []
 		line1 = []
 		line2 = []
@@ -49,11 +52,14 @@ class Read
 				if account.include? "?" 
 					account.each { |x| print x }
 					puts " ILL"
+					ills = ills + 1
 				elsif ((9*account[0]) + (8*account[1]) + (7*account[2]) + (6*account[3]) + (5*account[4]) + (4*account[5]) + (3*account[6]) + (2*account[7]) + (1*account[8])) % 11 == 0
 					account.each { |x| print x }
+					nice = nice + 1
 					puts ""
 				else
 					account.each { |x| print x }
+					errs = errs + 1
 					puts " ERR"
 				end
 			end
@@ -62,4 +68,4 @@ class Read
 	end
 end
 puts "Now reading #{ARGV[0]}"
-Read.new(ARGV[0])
+read = Read.new(ARGV[0])
