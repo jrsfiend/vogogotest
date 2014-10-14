@@ -1,5 +1,5 @@
 class Machine
-	def write(d, which, filename)
+	def write(d, which)
 		line1 = []
 		line2 = []
 		line3 = []
@@ -57,7 +57,7 @@ class Machine
 				@errors = @errors + 1
 			end
 		end
-		File.open(filename, "a+") do |f|
+		File.open(@filename, "a+") do |f|
 			line1.each { |element| f.write(element) }
 			f.puts("\n")
 			line2.each { |element| f.write(element) }
@@ -71,9 +71,13 @@ class Machine
 		@errors = 0
 		@valids = 0
 		@illegals = 0
-		File.open(filename, "w+") do |f|
+		@filename = filename
+		File.open(@filename, "w+") do |f|
 
 		end
+		create
+	end
+	def create
 		done = false
 		while !done do
 			if (@valids + @errors + @illegals) >= 125
@@ -93,19 +97,18 @@ class Machine
 			if ((1*d[8])+(2*d[7])+(3*d[6])+(4*d[5])+(5*d[4])+(6*d[3])+(7*d[2])+(8*d[1])+(9*d[0])) % 11 == 0
 				
 				if @valids <= 41
-					write(d, "valids", filename)
+					write(d, "valids")
 				end
 			else
 				line1 = []
 				line2 = []
 				line3 = []	
 				if @errors <= 41 and @valids > @errors
-					write(d, "errors", filename)
+					write(d, "errors")
 				end
 			end
 		end
 	end
-
 end
 
 puts "Let's write three test files that the machine would have output."
