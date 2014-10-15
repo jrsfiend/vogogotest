@@ -1,12 +1,16 @@
 class Read
 
 	def initialize(filename)
+		@filename = filename
+	end
+
+	def do
 		z = 0
 		account = []
 		line1 = []
 		line2 = []
 		line3 = []
-		File.readlines(filename).each do |line|
+		File.readlines(@filename).each do |line|
 			if z == 0
 				for i in 0..8
 					line1[i] = line[i * 3..i * 3 + 2]
@@ -63,3 +67,4 @@ class Read
 end
 puts "Now reading #{ARGV[0]}"
 read = Read.new(ARGV[0])
+read.do
