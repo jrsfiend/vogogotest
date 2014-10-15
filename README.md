@@ -5,11 +5,13 @@ This is tested in: ruby 2.0.0p481 (2014-05-08 revision 45883) [x86_64-linux]
 
 To demo these files, please:
 
+'''bash
 git clone https://github.com/jrsfiend/vogogotest.git
 
 cd vogogotest
 
 ./vogogo.sh
+'''
 
 This will demonstrate some sample output.
 
@@ -19,7 +21,9 @@ The parametres of the test didn't define how to get sample data to play with, so
 
 The test did say to have the actual test's script analyze a particular file at a time, so if you were to pass the 'vogogoread.rb' file a file you would do so in the command line, like:
 
+'''bash
 ruby vogogoread.rb "test.txt"
+'''
 
 and that would pass it the test.txt.
 
