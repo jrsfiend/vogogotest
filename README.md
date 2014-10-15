@@ -11,7 +11,7 @@ cd vogogotest
 
 This will demonstrate some sample output.
 
-It's creating files (in that bash script test.txt, test2.txt and test3.txt) by the guidelines (ie. 27 characters to a line, they're fancy and look like numbers but are tough for computers to understand, and there's about 500lines/file).
+It's creating files (in that bash script test.txt, test2.txt and test3.txt) by the guidelines (ie. 27 characters to a line, they're fancy and look like numbers but are tough for computers to understand, and there's about 500 entries (2000 lines)/file).
 
 The parametres of the test didn't define how to get sample data to play with, so I wrote a script 'vogogocreate.rb' that generates these three files.
 
