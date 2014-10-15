@@ -75,7 +75,6 @@ class Machine
 		File.open(@filename, "w+") do |f|
 
 		end
-		create
 	end
 	def create
 		done = false
@@ -113,8 +112,12 @@ end
 
 puts "Let's write three test files that the machine would have output."
 # they have errors, illegals and valids (almost equally dispersed)
-Machine.new("test.txt")
-Machine.new("test2.txt")
-Machine.new("test3.txt")
 
+test = Machine.new("test.txt")
+test.create
 
+test2 = Machine.new("test2.txt")
+test2.create
+
+test3 = Machine.new("test3.txt")
+test3.create
