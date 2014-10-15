@@ -30,3 +30,30 @@ and that would pass it the test.txt.
 Please see the resulting three files in your working directory - test.txt, test2.txt, and test3.txt for how a file must be formatted to be used as input for the 'read' script. It conforms with what I understood the format of the machine my manager bought uses for output - but there's always room for misinterpretation :)
 
 The reason I used a class in the reader script is for potential advancements in functionality. Essentially if this was a real-world scenario then there would be more work to be done with the different types of resulting account numbers, and you could easily write them to a variable within the class and then perform other work on the data by using the class object and voila - we're on the way to a usable script.
+
+Some example output:
+
+```
+ _  _  _  _     _     _  _ 
+  ||_|  | _||_|| ||_|  | _|
+  ||_|  | _|  ||_|  |  ||_ 
+  
+||| _  _  _  _  _  _  _  _ 
+ _|  | _||_||_ |_ |_  _| _|
+ _|  | _||_||_||_| _| _| _|
+
+    _     _  _  _  _  _  _ 
+|_||_||_| _|  ||_ |_ |_| _|
+  ||_|  ||_   | _||_||_| _|
+```
+
+The first is a great example of an account number that passes validation, the second has an illegal number - which is just assigned as a random digit in a valid account number, in order to provide some illegal numbers, and then the top line in that digit is replaced with '|||' - and the last one is a number that doesn't pass the checksum. The reading program would take these three lines, and output:
+
+```
+787340472
+?73866533 ILL
+484275683 ERR
+
+```
+
+Thanks!
