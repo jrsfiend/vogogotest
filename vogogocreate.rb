@@ -84,17 +84,10 @@ class Machine
 			end
 
 			d = []
-			d[8] = rand(9)
-			d[7] = rand(9)
-			d[6] = rand(9)
-			d[5] = rand(9)
-			d[4] = rand(9)
-			d[3] = rand(9)
-			d[2] = rand(9)
-			d[1] = rand(9)
-			d[0] = rand(9)
+			for i in 0..8
+				d[i] = rand(9)
+			end
 			if ((1*d[8])+(2*d[7])+(3*d[6])+(4*d[5])+(5*d[4])+(6*d[3])+(7*d[2])+(8*d[1])+(9*d[0])) % 11 == 0
-				
 				if @valids <= 175
 					write(d, "valids")
 				end
