@@ -1,6 +1,8 @@
 vogogotest
 ==========
 
+This is tested in: ruby 2.0.0p481 (2014-05-08 revision 45883) [x86_64-linux]
+
 To demo these files, please:
 
 git clone https://github.com/jrsfiend/vogogotest.git
