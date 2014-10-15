@@ -53,7 +53,6 @@ The first is a great example of an account number that passes validation, the se
 787340472
 ?73866533 ILL
 484275683 ERR
-
 ```
 
 Thanks!
