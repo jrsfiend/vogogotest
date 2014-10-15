@@ -79,7 +79,7 @@ class Machine
 	def create
 		done = false
 		while !done do
-			if (@valids + @errors + @illegals) >= 125
+			if (@valids + @errors + @illegals) >= 500
 				done = true
 			end
 
@@ -95,14 +95,14 @@ class Machine
 			d[0] = rand(9)
 			if ((1*d[8])+(2*d[7])+(3*d[6])+(4*d[5])+(5*d[4])+(6*d[3])+(7*d[2])+(8*d[1])+(9*d[0])) % 11 == 0
 				
-				if @valids <= 41
+				if @valids <= 175
 					write(d, "valids")
 				end
 			else
 				line1 = []
 				line2 = []
 				line3 = []	
-				if @errors <= 41 and @valids > @errors
+				if @errors <= 175 and @valids > @errors
 					write(d, "errors")
 				end
 			end
