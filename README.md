@@ -47,7 +47,7 @@ Some example output:
   ||_|  ||_   | _||_||_| _|
 ```
 
-The first is a great example of an account number that passes validation, the second has an illegal number - which is just assigned as a random digit in a valid account number, in order to provide some illegal numbers, and then the top line in that digit is replaced with '|||' - and the last one is a number that doesn't pass the checksum. The reading program would take these three lines, and output:
+The first is a great example of an account number that passes validation, the second has an illegal number - which is just assigned as a random digit in a valid account number and then the top line in that digit is replaced with '|||', in order to provide some illegal numbers - and the last one is a number that doesn't pass the checksum. The reading program would take these three lines, and output:
 
 ```
 787340472
