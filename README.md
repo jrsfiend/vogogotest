@@ -47,7 +47,11 @@ Some example output:
   ||_|  ||_   | _||_||_| _|
 ```
 
-The first is a great example of an account number that passes validation, the second has an illegal number - which is just assigned as a random digit in a valid account number and then the top line in that digit is replaced with '|||', in order to provide some illegal numbers - and the last one is a number that doesn't pass the checksum. The reading program would take these three lines, and output:
+The first is a great example of an account number that passes validation.
+
+The second has an illegal number - which is just assigned as a random digit in a valid account number and then the top line in that digit is replaced with '|||', in order to provide some illegal account numbers. This unfortunately makes all of the illegal account numbers only have one digit that isn't legible, so it doesn't emulate the machine all that wonderfully - as I'm sure the machine may give more than a single digit in the account number that is illegible.
+
+The last one is a number that doesn't pass the checksum. The reading program would take these three lines, and output:
 
 ```
 787340472
